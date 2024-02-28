@@ -1,0 +1,15 @@
+{
+  "name": "grigorispan/workfinder-php",
+  "description": "Job listing application",
+  "authors": [
+    {
+      "name": "Gregory Pan"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Framework\\": "Framework/",
+      "App\\": "App/"
+    }
+  }
+}
