@@ -4,15 +4,17 @@
 
 <section class="container mx-auto p-4 mt-4">
   <div class="rounded-lg shadow-md bg-white p-3">
+    <?php loadPartial('message') ?>
     <div class="flex justify-between items-center">
       <a class="block p-4 text-brightRed" href="/listings">
         <i class="fa fa-arrow-alt-circle-left"></i>
         Back To Listings
       </a>
       <div class="flex space-x-4 ml-4">
-        <a href="/edit" class="px-4 py-2 border-2 border-darkBlue hover:bg-darkBlue text-darkBlue hover:text-white rounded">Edit</a>
-        <!-- Delete Form -->
+        <a href="/listings/edit/<?= $listing->id ?>" class="px-4 py-2 border-2 border-darkBlue hover:bg-darkBlue text-darkBlue hover:text-white rounded">Edit</a>
+        <!-- Delete Form-->
         <form method="POST">
+          <input type="hidden" name="_method" value="DELETE" />
           <button type="submit" class="px-4 py-2 border-2 border-brightRed hover:bg-brightRed text-brightRed hover:text-white rounded">
             Delete
           </button>
@@ -31,9 +33,11 @@
           <strong>Location:</strong> <?= $listing->city ?> , <?= $listing->state ?>
           <!-- <span class="text-xs bg-brightRed text-white rounded-full px-2 py-1 ml-2">Local</span> -->
         </li>
-        <li class="mb-2">
-          <strong>Tags:</strong><?= $listing->tags ?>
-        </li>
+        <?php if (!empty($listing->tags)) : ?>
+          <li class="mb-2">
+            <strong>Tags:</strong> <?= $listing->tags ?>
+          </li>
+        <?php endif; ?>
       </ul>
     </div>
   </div>

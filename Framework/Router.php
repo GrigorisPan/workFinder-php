@@ -107,6 +107,14 @@ class Router
   {
     //inspect($uri);
     $requestMethod = $_SERVER['REQUEST_METHOD'];
+
+    // Check if the request is a POST and contains the _method parameter
+    if ($requestMethod === 'POST' && isset($_POST['_method'])) {
+      // Override the request method with the value of _method
+      $requestMethod = strtoupper($_POST['_method']);
+    }
+
+
     foreach ($this->routes as $route) {
       //inspect($route);
 
