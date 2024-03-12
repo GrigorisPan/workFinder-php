@@ -17,6 +17,7 @@ class ErrorController
       'status' => '404',
       'message' => $message
     ]);
+    exit;
   }
 
   /*
@@ -31,5 +32,6 @@ class ErrorController
       'status' => '403',
       'message' => $message
     ]);
+    exit;
   }
 }

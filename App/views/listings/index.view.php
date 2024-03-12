@@ -1,8 +1,15 @@
 <?php loadPartial('head'); ?>
 <?php loadPartial('navbar'); ?>
-<?php loadPartial('top-banner', [
-  'bannerContent' => 'All Jobs'
-]); ?>
+<?php if (isset($keywords) || isset($location)) {
+  $bannerContent = 'Search Results For : ' . htmlspecialchars($keywords) . ' ' . htmlspecialchars($location);
+  loadPartial('top-banner', [
+    'bannerContent' => $bannerContent
+  ]);
+} else {
+  loadPartial('top-banner', [
+    'bannerContent' => 'All Jobs'
+  ]);
+} ?>
 <?php loadPartial('message') ?>
 
 <section>

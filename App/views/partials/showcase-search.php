@@ -14,7 +14,7 @@
       <h1 class="max-w-md text-4xl font-bold text-center md:text-4xl mb-5">
         Find Your Dream Job
       </h1>
-      <form class="mb-4 flex flex-col mx-5 md:mx-auto md:w-2/3">
+      <form method='GET' action="/listings/search" class="mb-4 flex flex-col mx-5 md:mx-auto md:w-2/3">
         <input type="text" name="keywords" placeholder="Keywords" class="md:w-auto mb-2 px-4 py-2 focus:outline-none" />
         <input type="text" name="location" placeholder="Location" class="md:w-auto mb-2 px-4 py-2 focus:outline-none" />
         <button class="rounded-2xl md:w-auto bg-brightRed hover:bg-brightRedLight text-white px-4 py-2 focus:outline-none">
