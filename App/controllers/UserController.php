@@ -169,6 +169,7 @@ class UserController
       loadView('users/login', [
         'errors' => $errors
       ]);
+      exit;
     }
 
     //Check for email
@@ -183,6 +184,7 @@ class UserController
       loadView('users/login', [
         'errors' => $errors
       ]);
+      exit;
     }
 
     //Check if password is correct
@@ -191,6 +193,7 @@ class UserController
       loadView('users/login', [
         'errors' => $errors
       ]);
+      exit;
     }
     inspect($user);
     //Set user session
